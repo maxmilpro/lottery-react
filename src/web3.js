@@ -8,7 +8,10 @@ const ethEnabled = async () => {
   return false;
 };
 
-ethEnabled();
-const web3 = new Web3(window.ethereum);
+let web3;
+
+if (ethEnabled()) {
+  web3 = new Web3(window.ethereum);
+}
 
 export default web3;
